@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const homelist = (req, res) => {
   res.render('locations-list',
     {
@@ -103,3 +104,22 @@ module.exports = {
   locationInfo,
   addReview
 };
+=======
+/* GET 'home' page */
+const homelist = (req, res) => {
+  res.render("locations-list", { title: "Home" });
+};
+/* GET 'Location info' page */
+const locationInfo = (req, res) => {
+  res.render("location-info", { title: "Location info" });
+};
+/* GET 'Add review' page */
+const addReview = (req, res) => {
+  res.render("location-review-form", { title: "Add review" });
+};
+module.exports = {
+  homelist,
+  locationInfo,
+  addReview,
+};
+>>>>>>> 88aa64a2bdfef9e29f618a1cd09bc825bd4d3b13

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* GET homepage */
 const about = (req, res) => {
   res.render('generic-text',
@@ -11,3 +12,12 @@ const about = (req, res) => {
 module.exports = {
   about
 };
+=======
+/* GET 'about' page */
+const about = (req, res) => {
+  res.render("generic-text", { title: "About" });
+};
+module.exports = {
+  about,
+};
+>>>>>>> 88aa64a2bdfef9e29f618a1cd09bc825bd4d3b13

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "team22",
+=======
+  "name": "team-22",
+>>>>>>> 88aa64a2bdfef9e29f618a1cd09bc825bd4d3b13
   "version": "0.0.0",
   "private": true,
   "scripts": {

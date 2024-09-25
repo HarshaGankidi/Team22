@@ -44,6 +44,7 @@ function normalizePort(val) {
  */
 function onError(error) {
   if (error.syscall !== "listen") {
+    console.error(error); // Log the error stack for debugging
     throw error;
   }
 
@@ -60,6 +61,7 @@ function onError(error) {
       process.exit(1);
       break;
     default:
+      console.error(error); // Log other errors
       throw error;
   }
 }
@@ -75,9 +77,12 @@ function onListening() {
 }
 
 // Graceful shutdown
-process.on("SIGINT", () => {
+const shutdown = (signal) => {
   server.close(() => {
-    console.log("Server closed.");
+    console.log(`Server closed gracefully on ${signal}.`);
     process.exit(0);
   });
-});
+};
+
+process.on("SIGINT", () => shutdown("SIGINT"));
+process.on("SIGTERM", () => shutdown("SIGTERM"));
